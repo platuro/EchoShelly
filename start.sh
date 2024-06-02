@@ -4,6 +4,16 @@
 SOURCE="/boot/config_echo.txt"
 DESTINATION="$(pwd)/config.py"
 
+# Perform a git pull to ensure the repository is up-to-date
+git pull
+
+# Check if main.py is already running
+if pgrep -f "python3 $(pwd)/main.py" > /dev/null
+then
+    echo "main.py is already running. Aborting script execution."
+    exit 1
+fi
+
 # Check if the source file exists
 if [ -f "$SOURCE" ]; then
     # Move the file from /boot to the current directory
