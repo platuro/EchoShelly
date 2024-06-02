@@ -37,7 +37,7 @@ def round_up_to_nearest_10(n):
 
 if __name__ == "__main__":
     loop()
-    # Run the loop every 5 minutes
+    # Run the loop every 1 minute
     while True:
         loop()
-        time.sleep(300)
+        time.sleep(60)
