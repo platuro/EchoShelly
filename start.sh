@@ -4,6 +4,16 @@
 SOURCE="/boot/config_echo.txt"
 DESTINATION="$(pwd)/config.py"
 
+# Perform a git fetch to check for changes
+git fetch
+
+# Check if there are any local changes
+if ! git diff-index --quiet HEAD --; then
+    # Perform a hard reset to discard local changes
+    git reset --hard
+    echo "Local changes detected and discarded."
+fi
+
 # Perform a git pull to ensure the repository is up-to-date
 git pull
 
