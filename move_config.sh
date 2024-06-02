@@ -12,3 +12,6 @@ if [ -f "$SOURCE" ]; then
 else
     echo "File $SOURCE does not exist."
 fi
+
+# Run the main.py script
+python3 "$(pwd)/main.py"
