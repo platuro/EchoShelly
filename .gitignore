@@ -118,4 +118,4 @@ dmypy.json
 cython_debug/
 
 # Config file
-config.py
+# config.py
