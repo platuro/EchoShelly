@@ -7,7 +7,7 @@ DESTINATION="$(pwd)/config.py"
 # Check if the source file exists
 if [ -f "$SOURCE" ]; then
     # Move the file from /boot to the current directory
-    mv "$SOURCE" "$DESTINATION"
+    cp "$SOURCE" "$DESTINATION"
     echo "Moved $SOURCE to $DESTINATION"
 else
     echo "File $SOURCE does not exist."
